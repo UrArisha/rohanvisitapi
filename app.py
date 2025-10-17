@@ -1,9 +1,4 @@
-#This was made by JOBAYAR AHMED 
-#This was made by JOBAYAR AHMED 
-#This was made by JOBAYAR AHMED 
-#This was made by JOBAYAR AHMED 
-#This was made by JOBAYAR AHMED 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import aiohttp
 import asyncio
 import json
@@ -11,6 +6,8 @@ from byte import encrypt_api, Encrypt_ID
 from visit_count_pb2 import Info  # Import the generated protobuf class
 
 app = Flask(__name__)
+VALID_API_KEY = "DANGERxVISIT"
+MAX_VISITS = 1000
 
 def load_tokens(server_name):
     try:
@@ -42,7 +39,7 @@ def parse_protobuf_response(response_data):
     try:
         info = Info()
         info.ParseFromString(response_data)
-        
+
         player_data = {
             "uid": info.AccountInfo.UID if info.AccountInfo.UID else 0,
             "nickname": info.AccountInfo.PlayerNickname if info.AccountInfo.PlayerNickname else "",
@@ -73,7 +70,7 @@ async def visit(session, url, token, uid, data):
         app.logger.error(f"❌ Visit error: {e}")
         return False, None
 
-async def send_until_1000_success(tokens, uid, server_name, target_success=1000):
+async def send_until_success(tokens, uid, server_name, target_success):
     url = get_url(server_name)
     connector = aiohttp.TCPConnector(limit=0)
     total_success = 0
@@ -86,20 +83,20 @@ async def send_until_1000_success(tokens, uid, server_name, target_success=1000)
         data = bytes.fromhex(encrypted)
 
         while total_success < target_success:
-            batch_size = min(target_success - total_success, 1000)
+            batch_size = min(target_success - total_success, 100)
             tasks = [
                 asyncio.create_task(visit(session, url, tokens[(total_sent + i) % len(tokens)], uid, data))
                 for i in range(batch_size)
             ]
             results = await asyncio.gather(*tasks)
-            
+
             if first_success_response is None:
                 for success, response in results:
                     if success and response is not None:
                         first_success_response = response
                         player_info = parse_protobuf_response(response)
                         break
-            
+
             batch_success = sum(1 for r, _ in results if r)
             total_success += batch_success
             total_sent += batch_size
@@ -110,24 +107,26 @@ async def send_until_1000_success(tokens, uid, server_name, target_success=1000)
 
 @app.route('/<string:server>/<int:uid>', methods=['GET'])
 def send_visits(server, uid):
+    api_key = request.args.get("key", "")
+    if api_key != VALID_API_KEY:
+        return jsonify({"error": "❌ Invalid API Key"}), 403
+
     server = server.upper()
     tokens = load_tokens(server)
-    target_success = 1000
 
     if not tokens:
         return jsonify({"error": "❌ No valid tokens found"}), 500
 
     print(f"🚀 Sending visits to UID: {uid} using {len(tokens)} tokens")
-    print(f"Waiting for total {target_success} successful visits...")
+    print(f"Waiting for total {MAX_VISITS} successful visits...")
 
-    total_success, total_sent, player_info = asyncio.run(send_until_1000_success(
-        tokens, uid, server,
-        target_success=target_success
-    ))
+    total_success, total_sent, player_info = asyncio.run(
+        send_until_success(tokens, uid, server, target_success=MAX_VISITS)
+    )
 
     if player_info:
         player_info_response = {
-            "fail": target_success - total_success,
+            "fail": MAX_VISITS - total_success,
             "level": player_info.get("level", 0),
             "likes": player_info.get("likes", 0),
             "nickname": player_info.get("nickname", ""),
@@ -137,7 +136,7 @@ def send_visits(server, uid):
         }
         return jsonify(player_info_response), 200
     else:
-        return jsonify({"error": "Could not decode player information"}), 500
+        return jsonify({"error": "❌ Could not decode player information"}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
