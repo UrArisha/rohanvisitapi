@@ -7,7 +7,7 @@ from visit_count_pb2 import Info  # Import the generated protobuf class
 
 app = Flask(__name__)
 VALID_API_KEY = "DANGERxVISIT"
-MAX_VISITS = 10000
+MAX_VISITS = 1000
 
 def load_tokens(server_name):
     try:
