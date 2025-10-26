@@ -167,3 +167,40 @@ def Encrypt(x):
 print(decrypt_api(b'\xb7C\x1bG\xb8u\x8b\xec\xad\x82\x9c\xa9)\xe3\xde)'.hex()))
 
 print(Encrypt_ID(270279853))
+
+
+
+
+#,                         ︵
+#                        /'_/) 
+#                      /¯ ../ 
+#                    /'..../ 
+#                  /¯ ../ 
+#                /... ./
+#   ¸•´¯/´¯ /' ...'/´¯`•¸  
+# /'.../... /.... /.... /¯\
+#('  (...´.(,.. ..(...../',    \
+# \'.............. .......\'.    )      
+#   \'....................._.•´/
+#     \ ....................  /
+#       \ .................. |
+#         \  ............... |
+#           \............... |
+#             \ .............|
+#               \............|
+#                 \ .........|
+#                   \ .......|
+#                     \ .....|
+#                       \ ...|
+#                         \ .|
+#                           \\
+#                             \('-') 
+#   ,,                           |_|\
+#                               | |
+#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
+#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
+#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
+#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
+#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
+#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
+#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED
