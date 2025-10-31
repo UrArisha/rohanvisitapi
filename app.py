@@ -1,8 +1,3 @@
-#This was made by JOBAYAR AHMED 
-#This was made by JOBAYAR AHMED 
-#This was made by JOBAYAR AHMED 
-#This was made by JOBAYAR AHMED 
-#This was made by JOBAYAR AHMED 
 from flask import Flask, jsonify
 import aiohttp
 import asyncio
@@ -140,4 +135,6 @@ def send_visits(server, uid):
         return jsonify({"error": "Could not decode player information"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5100)
+
+
