@@ -52,7 +52,7 @@ def parse_protobuf_response(response_data):
 
 async def visit(session, url, token, uid, data):
     headers = {
-        "ReleaseVersion": "OB50",
+        "ReleaseVersion": "OB51",
         "X-GA": "v1 1",
         "Authorization": f"Bearer {token}",
         "Host": url.replace("https://", "").split("/")[0]
@@ -137,37 +137,3 @@ def send_visits(server, uid):
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5100)
 
-
-#,                         ︵
-#                        /'_/) 
-#                      /¯ ../ 
-#                    /'..../ 
-#                  /¯ ../ 
-#                /... ./
-#   ¸•´¯/´¯ /' ...'/´¯`•¸  
-# /'.../... /.... /.... /¯\
-#('  (...´.(,.. ..(...../',    \
-# \'.............. .......\'.    )      
-#   \'....................._.•´/
-#     \ ....................  /
-#       \ .................. |
-#         \  ............... |
-#           \............... |
-#             \ .............|
-#               \............|
-#                 \ .........|
-#                   \ .......|
-#                     \ .....|
-#                       \ ...|
-#                         \ .|
-#                           \\
-#                             \('-') 
-#   ,,                           |_|\
-#                               | |
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED
