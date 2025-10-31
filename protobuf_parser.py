@@ -592,39 +592,3 @@ class Parser:
             assert self._t.is_done, "parsing process is not done, Maybe invalid protobuf"
 
         return self._create_parsed_results()
-
-
-
-#,                         ︵
-#                        /'_/) 
-#                      /¯ ../ 
-#                    /'..../ 
-#                  /¯ ../ 
-#                /... ./
-#   ¸•´¯/´¯ /' ...'/´¯`•¸  
-# /'.../... /.... /.... /¯\
-#('  (...´.(,.. ..(...../',    \
-# \'.............. .......\'.    )      
-#   \'....................._.•´/
-#     \ ....................  /
-#       \ .................. |
-#         \  ............... |
-#           \............... |
-#             \ .............|
-#               \............|
-#                 \ .........|
-#                   \ .......|
-#                     \ .....|
-#                       \ ...|
-#                         \ .|
-#                           \\
-#                             \('-') 
-#   ,,                           |_|\
-#                               | |
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED

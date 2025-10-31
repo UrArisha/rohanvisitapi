@@ -36,39 +36,3 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_INFO']._serialized_start=131
   _globals['_INFO']._serialized_end=176
 # @@protoc_insertion_point(module_scope)
-
-
-
-#,                         ︵
-#                        /'_/) 
-#                      /¯ ../ 
-#                    /'..../ 
-#                  /¯ ../ 
-#                /... ./
-#   ¸•´¯/´¯ /' ...'/´¯`•¸  
-# /'.../... /.... /.... /¯\
-#('  (...´.(,.. ..(...../',    \
-# \'.............. .......\'.    )      
-#   \'....................._.•´/
-#     \ ....................  /
-#       \ .................. |
-#         \  ............... |
-#           \............... |
-#             \ .............|
-#               \............|
-#                 \ .........|
-#                   \ .......|
-#                     \ .....|
-#                       \ ...|
-#                         \ .|
-#                           \\
-#                             \('-') 
-#   ,,                           |_|\
-#                               | |
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED 
-#FUCKED BY JOBAYAR AHMED @JOBAYAR_AHMED

@@ -1,3 +1,8 @@
+#This was made by JOBAYAR AHMED 
+#This was made by JOBAYAR AHMED 
+#This was made by JOBAYAR AHMED 
+#This was made by JOBAYAR AHMED 
+#This was made by JOBAYAR AHMED 
 from flask import Flask, jsonify
 import aiohttp
 import asyncio
@@ -52,7 +57,7 @@ def parse_protobuf_response(response_data):
 
 async def visit(session, url, token, uid, data):
     headers = {
-        "ReleaseVersion": "OB51",
+        "ReleaseVersion": "OB49",
         "X-GA": "v1 1",
         "Authorization": f"Bearer {token}",
         "Host": url.replace("https://", "").split("/")[0]
@@ -135,5 +140,4 @@ def send_visits(server, uid):
         return jsonify({"error": "Could not decode player information"}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5100)
-
+    app.run(host="0.0.0.0", port=5000)
